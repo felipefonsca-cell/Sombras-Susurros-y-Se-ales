@@ -1,87 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+:root {
+  --bg: #0d0d0d;
+  --muted: #a3a3a3;
+  --accent: #d42222;
+  --card-bg: #1a1a1a;
+  --border: #660000;
+  --text: #e6e6e6;
+  --title-shadow: 2px 2px 8px #000;
+}
+
 body {
-  font-family: 'Georgia', serif;
-  background-color: #0d0d0d;
-  color: #e6e6e6;
   margin: 0;
-  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
 }
 
 header {
-  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
   padding: 20px;
   text-align: center;
-  border-bottom: 2px solid #660000;
+  border-bottom: 2px solid var(--border);
 }
 
 header h1 {
-  color: #cc0000;
+  margin: 0;
+  font-size: 28px;
+  color: var(--accent);
+  font-family: 'Creepster', cursive;
+  text-shadow: 2px 2px 4px var(--border);
 }
 
 nav a {
-  color: #e6e6e6;
-  margin: 0 15px;
+  color: var(--text);
   text-decoration: none;
+  margin-left: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #cc0000;
+  color: var(--accent);
 }
 
 section {
-  padding: 40px;
+  padding: 40px 0;
   border-bottom: 1px solid #333;
 }
 
 h2 {
-  color: #cc0000;
-  text-shadow: 2px 2px 4px #000;
+  font-size: 24px;
+  color: var(--accent);
+  font-family: 'Creepster', cursive;
+  text-shadow: var(--title-shadow);
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-blockquote {
-  background: #1a1a1a;
-  border-left: 4px solid #cc0000;
-  padding: 10px;
+.card {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  border: 1px solid var(--border);
+}
+
+.interview-question {
+  margin-bottom: 30px;
+  border-left: 3px solid var(--accent);
+  padding-left: 15px;
+}
+
+.interview-question h3 {
+  font-size: 1.2em;
+  color: var(--text);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.interview-answer {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.interview-answer h4 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-item {
+  text-align: center;
+  max-width: 250px;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+.image-caption {
   font-style: italic;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.investigation-item, .testimony-item {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+
+.investigation-item h3 {
+  color: var(--accent);
+}
+
+.testimony-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.testimony-item h3 {
+  font-family: 'Creepster', cursive;
+  font-size: 1.5em;
+  color: var(--accent);
+}
+
+.resource-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resource-item li {
+  margin-bottom: 10px;
+}
+
+.resource-item a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--muted);
+  transition: color 0.3s;
+}
+
+.resource-item a:hover {
+  color: var(--accent);
 }
 
 footer {
-  background: #1a1a1a;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  border-top: 2px solid #660000;
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-  height: 0;
-  overflow: hidden;
-  margin: 20px 0;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-img {
-  display: block;
-  margin: 20px auto;
-  max-width: 90%;
-  border: 2px solid #660000;
-  border-radius: 10px;
-}
-
-.social-links a {
-  color: #e6e6e6;
-  margin: 0 5px;
-  text-decoration: none;
-}
-
-.social-links a:hover {
-  color: #cc0000;
+  padding: 20px 0;
+  color: var(--muted);
 }
