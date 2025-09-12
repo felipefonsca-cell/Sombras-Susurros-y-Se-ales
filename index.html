@@ -1,315 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sombras, Susurros y Señales - Explorando lo Paranormal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-        header {
-            background-color: #1a1a1a;
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid #440000;
-        }
-        header h1 {
-            font-family: 'Creepster', cursive;
-            font-size: 3.5em;
-            color: #cc0000;
-            margin: 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-        header p {
-            font-size: 1.2em;
-            color: #b0b0b0;
-            margin-top: 10px;
-        }
-        nav {
-            background-color: #222222;
-            padding: 10px 0;
-            text-align: center;
-            border-bottom: 1px solid #333333;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #cc0000;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 40px 0;
-        }
-        .section {
-            background-color: #1c1c1c;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            border-left: 3px solid #cc0000;
-        }
-        .section h2 {
-            font-family: 'Creepster', cursive;
-            color: #cc0000;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .section p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-        .image-gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .image-gallery img:hover {
-            transform: scale(1.05);
-            border: 2px solid #cc0000;
-        }
-        .interview-card {
-            background-color: #2a2a2a;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border-left: 2px solid #990000;
-        }
-        .interview-card h3 {
-            color: #cc0000;
-            margin-top: 0;
-        }
-        .interview-card p {
-            margin-bottom: 10px;
-        }
-        .book-section {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-        }
-        .book-section img {
-            max-width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-            border: 2px solid #cc0000;
-        }
-        .book-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        .book-info h3 {
-            font-family: 'Creepster', cursive;
-            color: #cc0000;
-            font-size: 2em;
-            margin-top: 0;
-        }
-        .video-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .video-gallery iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .form-section {
-            background-color: #2a2a2a;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            border-left: 3px solid #cc0000;
-            margin-top: 30px;
-        }
-        .form-section label {
-            display: block;
-            margin-bottom: 8px;
-            color: #e0e0e0;
-        }
-        .form-section input[type="text"],
-        .form-section input[type="email"],
-        .form-section textarea {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #555;
-            background-color: #333;
-            color: #e0e0e0;
-            border-radius: 4px;
-        }
-        .form-section input[type="submit"] {
-            background-color: #cc0000;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-        .form-section input[type="submit"]:hover {
-            background-color: #990000;
-        }
-        footer {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-            border-top: 2px solid #440000;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sombras, Susurros y Señales</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#02020a;--muted:#9aa6b2;--accent:#7c3aed;--card-bg:rgba(255,255,255,0.02);--card-border:rgba(255,255,255,0.03)}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#02020a,#071122);color:#e6eef8}
+  .wrap{max-width:1100px;margin:28px auto;padding:20px}
+  header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  h1{margin:0;font-size:28px}
+  nav a{color:#e6eef8;text-decoration:none;margin-left:8px;padding:8px;border-radius:8px}
+  .card{background:linear-gradient(180deg,var(--card-bg),rgba(255,255,255,0.01));padding:16px;border-radius:10px;margin-top:18px;border:1px solid var(--card-border)}
+  .muted{color:#9aa6b2}
+  pre{background:#051024;padding:12px;border-radius:8px;overflow:auto;color:#cfe8ff}
+  .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .images-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .images-row img{max-width:32%;border-radius:8px}
+  .bib a{color:var(--accent);text-decoration:none}
+  .dark-hero{width: 100%;height: 300px;object-fit: cover;border-radius: 10px;filter: brightness(0.7);}
+  .book-section { display: flex; align-items: center; gap: 20px; }
+  .book-section img { max-width: 150px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); }
+  @media(max-width:900px){.video-grid{grid-template-columns:1fr}.images-row img{max-width:48%}.book-section{flex-direction: column; text-align: center;}}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Sombras, Susurros y Señales</h1>
-        <p>Explorando lo Inexplicable, Desvelando la Verdad</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#historias">Historias Reales</a></li>
-            <li><a href="#investigacion">Investigación</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#el-libro">El Libro</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <section id="inicio" class="section">
-            <h2>Bienvenido al Umbral de lo Desconocido</h2>
-            <p>Desde tiempos inmemoriales, la humanidad ha mirado con asombro y temor aquello que escapa a la lógica y la razón. Fenómenos inexplicables, apariciones, voces del más allá... En "Sombras, Susurros y Señales", nos adentramos en el fascinante y a menudo escalofriante mundo de lo paranormal. Prepárate para explorar testimonios auténticos, investigaciones profundas y evidencias visuales que te harán cuestionar la realidad tal como la conoces.</p>
-            <p>Nuestro objetivo es documentar y compartir estas experiencias, ofreciendo un espacio para aquellos que buscan respuestas o simplemente desean sumergirse en los misterios que nos rodean. ¿Estás listo para cruzar el velo?</p>
-        </section>
-
-        <section id="historias" class="section">
-            <h2>Historias Reales: Voces del Más Allá</h2>
-            <p>A continuación, presentamos una selección de testimonios recopilados, experiencias personales que nos hablan de encuentros con lo sobrenatural y fenómenos inexplicables. Cada relato es un eco de la realidad que muchos han vivido. Algunas veces, la verdad es más extraña que la ficción.</p>
-
-            <div class="interview-card">
-                <h3>El Espectro del Pasillo - Testimonio de Laura</h3>
-                <p>"Todo comenzó hace unos meses, en mi antiguo apartamento en Bogotá. Una noche, mientras estaba en la sala, sentí un frío intenso, aunque la ventana estaba cerrada. Miré hacia el pasillo y juraría que vi una sombra alta y delgada pasar rápidamente hacia el dormitorio. Al principio pensé que era mi imaginación, pero esto se repitió varias veces. Luego, comenzaron los susurros. Voces bajas, ininteligibles, que parecían venir de la nada. Llegué al punto de no querer estar sola en casa. La sensación de ser observada era constante, y a veces, al despertar, sentía una presión en el pecho, como si alguien estuviera sentado sobre mí. Fue aterrador."</p>
-                
-            </div>
-
-            <div class="interview-card">
-                <h3>Objetos que se Mueven - Testimonio de Andrés</h3>
-                <p>"En la casa de mis abuelos, en un pueblo cercano a Medellín, siempre hubo historias. Pero lo que me pasó a mí fue real. Estaba solo en la cocina, y de repente, un vaso de la alacena se deslizó por sí mismo y cayó al suelo, haciéndose añicos. No había temblor, ni nadie cerca. Otra vez, mis llaves desaparecieron de la mesa donde siempre las dejo y las encontré dentro de un zapato días después. Son cosas pequeñas, pero constantes, que te hacen pensar. Mis abuelos dicen que es el 'ánima de la casa', que le gusta jugar con las cosas."</p>
-                
-            </div>
-
-            <div class="interview-card">
-                <h3>El Sueño Recurrente - Testimonio de Valentina</h3>
-                <p>"Desde que era una niña, tengo un sueño recurrente. Siempre es el mismo escenario: una casa antigua, muy oscura, con un gran espejo en el pasillo principal. En el sueño, me miro en el espejo y mi reflejo no soy yo; es una figura sombría, con ojos completamente negros, que me sonríe de una forma muy perturbadora. Cada vez que tengo ese sueño, despierto sudando frío y con una sensación de angustia que me dura todo el día. He intentado investigar si existe esa casa, pero nunca he encontrado nada. Es como si esa entidad me persiguiera en mis noches."</p>
-                
-            </div>
-        </section>
-
-        <section id="investigacion" class="section">
-            <h2>Investigación y Evidencia</h2>
-            <p>Nuestro equipo se dedica a investigar a fondo los fenómenos reportados. A través de la recolección de testimonios, análisis de grabaciones y la búsqueda de patrones, intentamos arrojar luz sobre estos misterios. Si bien muchos fenómenos tienen explicaciones lógicas, otros desafían todo lo conocido. Presentamos aquí algunas de nuestras observaciones y hallazgos.</p>
-            
-            <div class="image-gallery">
-                <img src="https://i.ibb.co/C5fLq8x/Image-1.png" alt="Sombra en el cristal">
-                <img src="https://i.ibb.co/wJvB2t0/Image-3.png" alt="Figura fantasmal azul">
-                <img src="https://i.ibb.co/3sX8H3c/Image-4.png" alt="Visión nocturna de habitación">
-                <img src="https://i.ibb.co/5Y27L3Q/Image-5.png" alt="Símbolo ocular misterioso">
-            </div>
-            <p>Las imágenes son solo una pequeña muestra de los fenómenos visuales que se han registrado en diversas investigaciones. Desde sombras inexplicables hasta figuras etéreas capturadas en la oscuridad, cada una de ellas abre una ventana a lo desconocido. Continuamos recopilando y analizando estas evidencias para comprender mejor la naturaleza de lo paranormal.</p>
-        </section>
-
-        <section id="galeria" class="section">
-            <h2>Galería de Videos: Movimientos y Sonidos Inexplicables</h2>
-            <p>Aquí encontrarás una colección de videos que documentan actividades paranormales. Desde objetos que se mueven por sí solos hasta sonidos inexplicables, estas grabaciones buscan capturar la esencia de lo sobrenatural en tiempo real. Prepara tus sentidos.</p>
-            <div class="video-gallery">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=0lP-iM-m2hW4N_zL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/O-L2G73oQ7M?si=oJ9K4jU2nL9A9P_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/Gnj4oKzJ270?si=Y9_H6xYn7F9K47y_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section id="el-libro" class="section">
-            <h2>El Libro: La Guía Paranormal</h2>
-            <div class="book-section">
-                <img src="https://i.ibb.co/P4N4rKx/Image-2.png" alt="Portada del libro La Guía Paranormal">
-                <div class="book-info">
-                    <h3>Descubre "La Guía Paranormal: Un Manual para Cazafantasmas Modernos"</h3>
-                    <p>Sumérgete en el conocimiento profundo de lo paranormal con este manual esencial. "La Guía Paranormal" ofrece una visión detallada sobre cómo investigar fenómenos, protegerse de energías negativas y comprender la naturaleza de las entidades. Escrito por expertos en el campo, este libro es una herramienta invaluable para cualquier persona interesada en ir más allá de la superficie de lo inexplicable.</p>
-                    <p>Aprende sobre:</p>
-                    <ul>
-                        <li>Técnicas de investigación paranormal</li>
-                        <li>Tipos de entidades y manifestaciones</li>
-                        <li>Herramientas y equipos esenciales</li>
-                        <li>Protección y limpieza energética</li>
-                        <li>Casos de estudio y análisis profundo</li>
-                    </ul>
-                    <p>Una lectura obligada para exploradores de lo oculto.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto" class="form-section">
-            <h2>Comparte tu Experiencia</h2>
-            <p>¿Has tenido un encuentro con lo inexplicable? ¿Tienes una historia paranormal que contar? Nos encantaría escucharla. Rellena el siguiente formulario y comparte tu testimonio. Tu experiencia puede ayudar a otros a comprender mejor los misterios que nos rodean.</p>
-            <form action="#" method="POST">
-                <label for="nombre">Nombre o Pseudónimo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="email">Correo Electrónico (opcional):</label>
-                <input type="email" id="email" name="email">
-
-                <label for="historia">Tu Historia Paranormal:</label>
-                <textarea id="historia" name="historia" rows="10" required></textarea>
-
-                <input type="submit" value="Enviar Testimonio">
-            </form>
-        </section>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Sombras, Susurros y Señales</h1>
+      <p class="muted">Una exploración de lo inexplicable: entrevistas, casos, videos y análisis.</p>
     </div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#articulos">Artículos</a>
+      <a href="#entrevistas">Entrevistas</a>
+      <a href="#multimedia">Videos</a>
+      <a href="#libro">El libro</a>
+      <a href="#formulario">Participa</a>
+    </nav>
+  </header>
 
-    <footer>
-        <p>&copy; 2023 Sombras, Susurros y Señales. Todos los derechos reservados. Explorando los límites de la realidad.</p>
-    </footer>
+  <img class="dark-hero" src="680aaef8-8f5f-4d39-9c2a-4f08fe6a4905.jpg" alt="Imagen de una escena de la película Actividad Paranormal">
+
+  <section id="inicio" class="card">
+    <h2>Resumen</h2>
+    <p class="muted">Este sitio reúne entrevistas, síntesis de investigaciones académicas, una guía técnica para el registro de eventos y un análisis de casos ilustrativos. También se ha integrado contenido de artículos periodísticos y videos sobre el tema.</p>
+  </section>
+
+  <section id="articulos" class="card">
+    <h3>Los 7 fenómenos (detalle)</h3>
+    <ol class="muted">
+      <li><strong>Conexión cuerpo y mente</strong><br>
+      Estudios y relatos muestran que la mente puede influir en la percepción y la experiencia corporal de formas intensas (efectos placebo extremos, psicosomática).</li>
+      <li><strong>Poderes psíquicos y percepción extrasensorial</strong><br>
+      Casos reportados de telepatía, clarividencia y percepciones extrasensoriales; la investigación científica suele exigir controles estrictos y, hasta ahora, no ha validado consistentemente estas capacidades.</li>
+      <li><strong>Experiencias cercanas a la muerte (ECM)</strong><br>
+      Relatos comunes incluyen túneles de luz, paz profunda y encuentros con seres queridos. La interpretación varía desde explicaciones neurobiológicas hasta hipótesis espirituales.</li>
+      <li><strong>OVNIs</strong><br>
+      Avistamientos de objetos voladores no identificados siguen apareciendo en registros globales; algunos casos quedan sin explicación y alimentan debates entre testimonio, error y fenómenos aún no categorizados.</li>
+      <li><strong>Déjà vu</strong><br>
+      La sensación de haber vivido una situación antes. Un misterio para la neurociencia: puede deberse a fallos de memoria o mecanismos cognitivos aún en estudio.</li>
+      <li><strong>Fantasmas</strong><br>
+      Apariciones, sombras y voces; abundan testimonios y grabaciones, pero la evidencia objetiva y replicable que confirme entidades conscientes no ha sido establecida.</li>
+      <li><strong>Intuición</strong><br>
+      Percepción rápida o "sexto sentido". La psicología contemporánea la interpreta como procesamiento inconsciente de señales y patrones, aunque para muchos representa una experiencia inexplicable.</li>
+    </ol>
+    <p class="muted">Fuente: Utadeo — <em>Siete fenómenos paranormales que científicos no han podido</em>. Para leer el artículo original visita: <a href="https://www.utadeo.edu.co/es/noticia/emisora/emisora-oyeme-ujtl/7451/siete-fenomenos-paranormales-que-cientificos-no-han-podido" target="_blank" rel="noreferrer">Utadeo</a>.</p>
+  </section>
+
+  <section id="entrevistas" class="card">
+    <h2>Entrevistas — testimonios completos</h2>
+    <p class="muted">A continuación, se presentan las entrevistas completas que aportaste (Laura, Andrés, Valentina), preservadas en su forma original para análisis y lectura.</p>
+    <pre style="white-space:pre-wrap">
+Pregunta 1: ¿Qué opinas de las personas que no creen en lo paranormal? ¿Crees que todas las experiencias se pueden explicar por la ciencia?
+
+Laura Gómez – Psicología (escéptica):
+Me parece totalmente respetable que alguien no crea, porque la mayoría de experiencias paranormales tienen explicaciones desde la percepción humana. El cerebro busca patrones incluso donde no los hay: eso se llama pareidolia. Cuando escuchamos ruidos en la noche o vemos una sombra, la mente puede interpretarlo como algo “más allá”. Yo sí pienso que, con el tiempo, la ciencia va a poder explicar todos esos fenómenos, aunque hoy todavía haya huecos en el conocimiento.
+
+Andrés Morales – Antropología (curioso y abierto):
+Creo que las personas que no creen en lo paranormal simplemente tienen una visión más racional del mundo, y está bien. Pero también pienso que lo paranormal no siempre debe entenderse como “fantasmas”, sino como experiencias que la gente interpreta de formas distintas según su cultura. Para mí, la ciencia explica muchas cosas, pero no necesariamente todas. Todavía hay fenómenos de la mente, de la conciencia y de los espacios que no comprendemos del todo.
+
+Valentina Ruiz – Historia del Arte (creyente):
+Yo siento que las personas que no creen lo hacen porque no han tenido una experiencia fuerte. Para mí, la ciencia tiene límites, porque lo paranormal pertenece a otro plano. No creo que todo pueda ser explicado con microscopios o experimentos. El arte, la religión y la espiritualidad llevan siglos mostrando que existe “algo más”.
+
+---
+
+Pregunta 2: ¿Qué papel crees que juegan las emociones, como el miedo o la ansiedad, en la percepción de estos fenómenos?
+
+Laura (Psicología):
+Son la base. El miedo y la ansiedad predisponen a interpretar cualquier estímulo como una amenaza. Por ejemplo, si escuchas un crujido en la noche, y ya vienes con miedo, tu mente lo amplifica. Las emociones intensas pueden incluso generar alucinaciones.
+
+Andrés (Antropología):
+Las emociones influyen mucho, pero no creo que todo se reduzca a eso. El miedo puede hacer que un grupo entero perciba lo mismo. Pero también pienso que en esos estados de vulnerabilidad es cuando algunas culturas creen que estamos más abiertos a “otras energías”.
+
+Valentina (Historia del Arte):
+El miedo es una puerta. A veces, en los momentos de más ansiedad, uno siente cosas que normalmente no percibe. No digo que siempre sea imaginación, sino que las emociones actúan como antena.
+
+---
+
+Pregunta 3: ¿Alguna vez han sido testigos de un fenómeno paranormal en grupo? ¿Qué hicieron inmediatamente después y cómo les afectó a largo plazo?
+
+Laura (Psicología):
+Nunca he vivido algo así en grupo. Lo más cercano fue cuando mis compañeros aseguraban ver luces en un salón, y resultó ser un reflejo. Eso me confirmó que muchas experiencias son sugestión.
+
+Andrés (Antropología):
+Sí, en un pueblo antiguo, todos sentimos un olor raro y frío repentino en una casa abandonada. Fue impactante porque varios lo notamos al mismo tiempo. Después lo discutimos mucho. A mí me dejó la idea de que lo paranormal, real o no, tiene un valor como experiencia colectiva.
+
+Valentina (Historia del Arte):
+Sí, en un museo colonial. Varios sentimos que una estatua nos seguía con la mirada. Yo me asusté muchísimo, recé y me alejé. Esa experiencia me marcó: desde entonces pienso que los objetos antiguos guardan energías.
+
+---
+
+Pregunta 4: ¿Alguna vez han intentado interactuar con una presencia o un fenómeno paranormal? ¿Qué sucedió?
+
+Laura (Psicología):
+Nunca, porque creo que solo alimenta la sugestión. Lo que ocurre en ouijas o péndulos es inconsciente, no espiritual.
+
+Andrés (Antropología):
+Sí, con una ouija en la universidad. Se movía, pero yo lo atribuyo al efecto ideomotor. Igual fue interesante como fenómeno social.
+
+Valentina (Historia del Arte):
+Sí. Una vez sentí algo en mi cuarto, recé en voz alta pidiendo respeto. La sensación desapareció. Para mí fue una interacción real.
+
+---
+
+Pregunta 5: ¿Crees en tipos específicos de entidades paranormales (fantasmas, poltergeists, elementales, etc.)? ¿Has tenido experiencia con alguna de ellas?
+
+Laura (Psicología):
+No. Todo eso son categorías culturales. Nunca he visto nada que confirme que existen.
+
+Andrés (Antropología):
+Creo más en “lugares cargados” que en fantasmas con forma humana. Las culturas hablan de espíritus de la tierra, y pienso que eso representa energías colectivas.
+
+Valentina (Historia del Arte):
+Sí, creo en fantasmas y en energías ligadas a objetos antiguos. He sentido presencias en iglesias viejas y museos.
+
+---
+
+Pregunta 6: ¿Cuál es la experiencia paranormal más sutil o inexplicable que han tenido?
+
+Laura (Psicología):
+La sensación de estar observada en un cuarto oscuro. Luego entendí que era mi propio estado de alerta.
+
+Andrés (Antropología):
+En un cementerio, durante un trabajo de campo, sentí claramente que alguien me seguía, pero estaba solo. Nunca lo pude explicar del todo.
+
+Valentina (Historia del Arte):
+Olor a flores en mi cuarto, cuando no había nada ahí. Para mí fue una señal espiritual.
+
+---
+
+Pregunta 7: ¿Qué métodos o herramientas (péndulos, ouijas, grabadoras) han utilizado? ¿Qué opinan de su eficacia?
+
+Laura (Psicología):
+La ouija funciona por micro-movimientos inconscientes, no por espíritus. Son sugestión.
+
+Andrés (Antropología):
+Usé grabadoras en campo. Captamos ruidos extraños, pero ambiguos. No prueban nada, pero enriquecen la experiencia cultural.
+
+Valentina (Historia del Arte):
+Usé péndulo y ouija. En mi caso, el péndulo me dio respuestas que sentí acertadas. Creo que sí son eficaces si uno cree.
+
+---
+
+Pregunta 8: ¿Creen que algunas experiencias paranormales sean “improntas energéticas” de un lugar, en lugar de entidades conscientes?
+
+Laura (Psicología):
+No. Es memoria colectiva y sugestión, no energía real.
+
+Andrés (Antropología):
+Sí, me parece una buena explicación cultural. Los lugares tienen memoria simbólica.
+
+Valentina (Historia del Arte):
+Absolutamente. Creo que muchos sitios antiguos guardan energías de lo que pasó ahí.
+
+---
+
+Pregunta 9: ¿Qué consejo le darían a alguien que está teniendo su primera experiencia paranormal?
+
+Laura (Psicología):
+Mantén la calma y busca explicaciones lógicas. No te dejes llevar por el miedo.
+
+Andrés (Antropología):
+Observa, anota lo que sientas y compártelo. No lo vivas en silencio.
+
+Valentina (Historia del Arte):
+Haz una oración, protégete espiritualmente y confía en tu intuición.
+
+---
+
+Pregunta 10: ¿Qué opinan sobre el uso de la tecnología (cámaras, detectores EMF) en la investigación paranormal?
+
+Laura (Psicología):
+Detectan fenómenos físicos, no espíritus. No prueban nada paranormal.
+
+Andrés (Antropología):
+Sirven como registro, aunque lo paranormal no siempre se puede “atrapar” en datos.
+
+Valentina (Historia del Arte):
+Son útiles, pero limitadas. Lo humano y lo espiritual pesan más que una cámara.
+
+---
+
+Pregunta 11: ¿Qué libro, película o documental sobre lo paranormal les impactó más y por qué?
+
+Laura (Psicología):
+El Exorcista me impresionó, pero lo veo como ficción que explota miedos humanos.
+
+Andrés (Antropología):
+El Proyecto de la Bruja de Blair. Me fascinó cómo muestra el miedo colectivo.
+
+Valentina (Historia del Arte):
+El Sexto Sentido. Me marcó porque me hizo pensar que los muertos conviven con nosotros.
+
+---
+
+Pregunta 12: ¿Han tenido alguna experiencia paranormal que les hiciera reevaluar sus creencias o visión del mundo?
+
+Laura (Psicología):
+No. Todas mis experiencias refuerzan mi escepticismo.
+
+Andrés (Antropología):
+Sí. La experiencia en el pueblo antiguo me hizo pensar que no todo se reduce a ciencia.
+
+Valentina (Historia del Arte):
+Sí, cada experiencia refuerza mi fe en que lo espiritual existe.
+</pre>
+  </section>
+
+  <section id="leyendas-urbanas" class="card">
+    <h2>Leyendas Urbanas y Relatos de Terror</h2>
+    <p class="muted">Historias que se cuentan y se comparten, a menudo con un trasfondo cultural o psicológico.</p>
+    <article style="margin-top:10px">
+        <h4 style="margin:0">La Chica de la Curva</h4>
+        <p class="small">Esta leyenda urbana cuenta la historia de una mujer que hace autostop en una carretera, generalmente cerca de una curva peligrosa. Al subir al coche, le advierte al conductor sobre el peligro inminente y luego desaparece. La historia tiene múltiples variantes y ha circulado por décadas.</p>
+    </article>
+    <article style="margin-top:10px">
+        <h4 style="margin:0">Bloody Mary</h4>
+        <p class="small">La leyenda de Bloody Mary sostiene que si se pronuncia su nombre tres o nueve veces frente a un espejo, su espíritu aparecerá y matará a la persona. Hay versiones que la identifican como la reina María I de Inglaterra, o como una bruja o una joven desfigurada.</p>
+    </article>
+    <article style="margin-top:10px">
+        <h4 style="margin:0">Casos de Reddit</h4>
+        <p class="small">Relatos de usuarios de Reddit que comparten experiencias inquietantes, como una chica que habla con "un niño perdido" en su casa o una persona que ve una figura arrodillada a los pies de su cama, que desaparece al parpadear. Estas historias se vuelven virales por su naturaleza inexplicable.</p>
+    </article>
+  </section>
+
+  <section id="multimedia" class="card">
+    <h2>Videos seleccionados</h2>
+    <p class="muted">Una selección de videos de Dross y otros creadores que exploran lo inexplicable y lo paranormal.</p>
+    <div class="video-grid">
+      <div><iframe width="100%" height="250" src="https://www.youtube.com/embed/ZHbfzYoTDnk" frameborder="0" allowfullscreen></iframe><p class="muted">Dross presenta: 3 casos paranormales y siniestros.</p></div>
+      <div><iframe width="100%" height="250" src="https://www.youtube.com/embed/QLgmWf_bN-A" frameborder="0" allowfullscreen></iframe><p class="muted">3 Casos Sobrenaturales Aterradores (Con Video).</p></div>
+      <div><iframe width="100%" height="250" src="https://www.youtube.com/embed/J7jhZkF8AY0" frameborder="0" allowfullscreen></iframe><p class="muted">3 Aterradores Videos Paranormales.</p></div>
+      <div><iframe width="100%" height="250" src="https://www.youtube.com/embed/X_qQqUNJQEg" frameborder="0" allowfullscreen></iframe><p class="muted">Dross — top hechos perturbadores.</p></div>
+    </div>
+  </section>
+
+  <section id="libro" class="card">
+    <h2>La guía paranormal</h2>
+    <div class="book-section">
+      <img src="6abec6b7-6eba-4cb7-9a6d-23711e7ebf6a.png" alt="Portada del libro La guía paranormal">
+      <div>
+        <p class="muted">Este libro, escrito por el equipo de "La Sociedad de las Pesadillas", se presenta como un manual para "cazafantasmas modernos" y ofrece una guía de métodos y una lectura crítica de la cultura del misterio. Aporta un manual para que cualquier persona interesada pueda explorar estos fenómenos de manera informada y segura. La obra explora desde el equipo necesario para una investigación (cámaras, medidores EMF) hasta la importancia de la ética y la seguridad en el campo.</p>
+        <blockquote class="muted">«Un lugar no es sólo su historia: es la memoria de quienes lo habitaron»</blockquote>
+        <p class="muted">La frase resume la propuesta central del libro: los objetos y la arquitectura actúan como disparadores de relatos y experiencias colectivas. Este enfoque conecta lo paranormal con la historia, la cultura y la psicología del lugar.</p>
+        <p class="muted">Ficha del libro en <a href="https://www.planetadelibros.com/libro-la-guia-paranormal/403847" target="_blank" rel="noreferrer">PlanetadeLibros</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="recursos" class="card">
+    <h2>Lecturas y fuentes</h2>
+    <ul class="muted bib">
+      <li><a href="https://www.esquire.com/es/actualidad/a23862741/leyendas-urbanas-halloween/" target="_blank" rel="noreferrer">Esquire — 27 leyendas urbanas que dan mucho miedo.</a></li>
+      <li><a href="https://www.elconfidencial.com/alma-corazon-vida/2016-07-25/casos-paranormales-reddit-dejaran-sin-dormir_1236468/" target="_blank" rel="noreferrer">El Confidencial — Casos paranormales de Reddit.</a></li>
+      <li><a href="https://www.planetadelibros.com/libro-la-guia-paranormal/403847" target="_blank" rel="noreferrer">PlanetadeLibros — La guía paranormal (ficha).</a></li>
+      <li><a href="https://www.youtube.com/watch?v=ZHbfzYoTDnk" target="_blank" rel="noreferrer">YouTube — Dross presenta: 3 casos paranormales y siniestros.</a></li>
+      <li><a href="https://www.youtube.com/watch?v=QLgmWf_bN-A" target="_blank" rel="noreferrer">YouTube — 3 Casos Sobrenaturales Aterradores (Con Video).</a></li>
+      <li><a href="https://www.youtube.com/watch?v=J7jhZkF8AY0" target="_blank" rel="noreferrer">YouTube — 3 Aterradores Videos Paranormales.</a></li>
+      <li><a href="https://elpais.com/noticias/fenomenos-paranormales" target="_blank" rel="noreferrer">El País — Fenómenos paranormales.</a></li>
+      <li><a href="https://www.utadeo.edu.co/es/noticia/emisora/emisora-oyeme-ujtl/7451/siete-fenomenos-paranormales-que-cientificos-no-han-podido" target="_blank" rel="noreferrer">Utadeo — Siete fenómenos que la ciencia no ha descifrado.</a></li>
+    </ul>
+  </section>
+
+  <section id="formulario" class="card">
+    <h2>Participa — formulario</h2>
+    <p class="muted">Envía tu testimonio: el formulario está integrado para facilitar los aportes.</p>
+    <iframe class="form" style="width:100%;height:560px;border:0;border-radius:8px" src="https://docs.google.com/forms/d/e/1FAIpQLSde3_2ogErw0hxcg5hMAR0OQXws11AkdOFtHFRNcKCQLvFInA/viewform?embedded=true"></iframe>
+  </section>
+
+  <footer class="card">
+    <p class="muted">Paquete actualizado. Para publicar: sube `index.html` y las imágenes a tu hosting.</p>
+  </footer>
+</div>
 </body>
 </html>
