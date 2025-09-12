@@ -1,1 +1,1 @@
-Paranormal site v2 — incluye más artículos y videos. Subir index.html y images/ al hosting.
+Pagina paranormal — incluye más artículos y videos. Subir index.html
